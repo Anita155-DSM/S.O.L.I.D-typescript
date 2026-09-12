@@ -40,21 +40,26 @@ class CashPyment implements PaymentMethod {
 }
 
 class PaymentProcessor {
-  constructor(private paymentMethod: PaymentMethod){}
+  constructor(private paymentMethod: PaymentMethod){} //aca aplicamos la inyeccion de dependencias como haciamos en el ejercicio 1, pero un poco más flexible por así decirlo
 
   createPayCard(amount: number){ //creamos pago con tarjeta
     this.paymentMethod.pay(amount)
   }
 
-  createPayTransfer(pay:PaymentMethod){ //creamos pago con transferencia
-    this.createPayTransfer(pay)
+  createPayTransfer(amount: number){ //creamos pago con transferencia
+    this.paymentMethod.pay(amount)
   }
 
-  createPayCash(pay:PaymentMethod){ //creamos pago con efectivo
-    this.createPayCash(pay)
+  createPayCash(amount: number){ //creamos pago con efectivo
+    this.paymentMethod.pay(amount)
   }
 }
 
-const pago = new PaymentProcessor(new CardPyment())
-pago.createPayCard(1000)
+const pagoConTarjeta = new PaymentProcessor(new CardPyment()) //aca lo q hacemos es crear una variable, donde instanciamos la clase PaymentProcessor y hacemos una inyeccón de dependencias
+pagoConTarjeta.createPayCard(1000)
 
+const pagoConTransferencia = new PaymentProcessor(new TransferPyment())
+pagoConTransferencia.createPayTransfer(1200)
+
+const pagoConEfectivo = new PaymentProcessor(new CashPyment())
+pagoConEfectivo.createPayCash(2000)
