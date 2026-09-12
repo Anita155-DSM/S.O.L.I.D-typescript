@@ -4,11 +4,11 @@
   "description": "Al terminar estos ejercicios deberias poder:",
   "main": "index.js",
   "scripts": {
-    "01-srp": "node ejercicios/01-srp.ts",
-    "02-ocp": "node ejercicios/02-ocp.ts",
-    "03-lsp": "node ejercicios/03-lsp.ts",
-    "04-isp": "node ejercicios/04-isp.ts",
-    "05-dip": "node ejercicios/05-dip.ts"
+    "01-srp": "tsx ejercicios/01-srp.ts",
+    "02-ocp": "tsx ejercicios/02-ocp.ts",
+    "03-lsp": "tsx ejercicios/03-lsp.ts",
+    "04-isp": "tsx ejercicios/04-isp.ts",
+    "05-dip": "tsx ejercicios/05-dip.ts"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/Anita155-DSM/S.O.L.I.D-typescript/issues"
   },
-  "homepage": "https://github.com/Anita155-DSM/S.O.L.I.D-typescript#readme"
+  "homepage": "https://github.com/Anita155-DSM/S.O.L.I.D-typescript#readme",
+  "devDependencies": {
+    "tsx": "^4.23.13"
+  }
 }

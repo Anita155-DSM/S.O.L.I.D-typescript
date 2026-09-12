@@ -65,3 +65,4 @@ const newUser = {
 }
 
 users.createUser(newUser)
+console.log(users.userRepository.users) //aca vemos que se guardo en el arreglo
